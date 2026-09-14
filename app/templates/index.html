@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Travel Policy Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ================================================== -->
+    <!-- HEADER -->
+    <!-- ================================================== -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>
+                ✈️ AI Travel Policy Assistant
+            </h1>
+
+            <p>
+                Your intelligent corporate travel policy assistant
+            </p>
+
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Agent Online
+        </div>
+
+    </header>
+
+
+    <!-- ================================================== -->
+    <!-- MAIN -->
+    <!-- ================================================== -->
+
+    <main class="main-content">
+
+        <!-- LEFT PANEL -->
+
+        <section class="sidebar">
+
+            <div class="card">
+
+                <h2>Employee Details</h2>
+
+                <label for="employee-id">
+                    Employee ID
+                </label>
+
+                <input
+                    type="text"
+                    id="employee-id"
+                    placeholder="Example: EMP001"
+                >
+
+                <p class="hint">
+                    Enter your employee ID for personalized
+                    eligibility and trip validation.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Quick Questions</h2>
+
+                <button
+                    class="quick-question"
+                    data-question="What is the airport reimbursement limit in India?"
+                >
+                    🇮🇳 India airport limit
+                </button>
+
+                <button
+                    class="quick-question"
+                    data-question="What is the airport reimbursement limit in the US?"
+                >
+                    🇺🇸 US airport limit
+                </button>
+
+                <button
+                    class="quick-question"
+                    data-question="Can I take an airport trip at night?"
+                >
+                    🌙 Night airport trip
+                </button>
+
+                <button
+                    class="quick-question"
+                    data-question="What happens if my trip costs more than the limit?"
+                >
+                    💰 Trip above limit
+                </button>
+
+            </div>
+
+
+            <button
+                id="clear-button"
+                class="clear-button"
+            >
+                Clear Conversation
+            </button>
+
+        </section>
+
+
+        <!-- CHAT PANEL -->
+
+        <section class="chat-panel">
+
+            <div
+                id="chat-container"
+                class="chat-container"
+            >
+
+                <div class="message assistant-message">
+
+                    <div class="message-label">
+                        🤖 Assistant
+                    </div>
+
+                    <div class="message-text">
+
+                        Hello! I'm your AI Travel Policy Assistant.
+                        Ask me about travel policies, employee
+                        eligibility, trip validation, or
+                        reimbursement.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOURCES -->
+
+            <div
+                id="sources-container"
+                class="sources-container hidden"
+            >
+
+                <h3>Policy Sources</h3>
+
+                <div id="sources-list"></div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="input-area">
+
+                <textarea
+                    id="question"
+                    placeholder="Ask a travel policy question..."
+                    rows="2"
+                ></textarea>
+
+                <button
+                    id="send-button"
+                    class="send-button"
+                >
+                    Send
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='js/app.js') }}"
+></script>
+
+</body>
+
+</html>
